@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="center">History</h1>
+    {% if texts|length < 1 %} <h4 class="center">There are no Conversions.. Use the converter!</h4>
+        {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Input</th>
+                    <th scope="col">Output</th>
+                    <th scope="col">Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for text in texts %}
+                <tr>
+                    <th scope="row">{{ text.id }}</th>
+                    <td>{{ text.inp }}</td>
+                    <td>{{ text.out }}</td>
+                    <td>{{ text.date_created.date() }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+</div>
+
+{% endblock %}

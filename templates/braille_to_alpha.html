@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<section id="text" class="container">
+    <h2>Text</h2>
+    <form action="/braille_to_alpha" method="POST">
+        <div class="container">
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="inp">Input:</label>
+                    <textarea class="form-control" rows="10" id="inp" name="inp">{{ text.inp }}</textarea>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="out">Output:</label>
+                    <textarea class="form-control" rows="10" id="out" name="inp">{{ text.out }}</textarea>
+                </div>
+            </div>
+
+            <div class="center">
+                <button type="submit" class="btn btn-primary center">Convert</button>
+            </div>
+
+        </div>
+    </form>
+</section>
+
+{% endblock %}
